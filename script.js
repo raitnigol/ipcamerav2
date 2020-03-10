@@ -1,7 +1,9 @@
 // käivita taimer
-function startTimer() {
+function startFunctions() {
     // downloadi uus pilt iga 300ms tagant
     setInterval(DownloadImage, 200);
+    // käivita kellaaja skript
+    showTime()
 }
 
 // tee uus objekt Headerite jaoks
@@ -18,4 +20,18 @@ function DownloadImage() {
     };
 
     image.src = "http://172.17.15.57/jpg/image.jpg" + "?_=" + (+new Date());
+}
+
+function showTime() {
+    var today = new Date();
+    var h = today.getHours();
+    m = pad2(today.getMinutes());
+    s = pad2(today.getSeconds());
+    document.getElementById("clock").innerHTML = `${h}:${m}:${s}`
+
+    setTimeout(showTime, 500);
+}
+
+function pad2(number) {
+    return (number < 10 ? '0' : '') + number
 }
