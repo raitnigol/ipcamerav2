@@ -1,13 +1,19 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: black;
+}
+
+#cameraView {
+	background: transparent;
+}
+
 #jpgFromCamera {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
-    height: 70%;
-
-}
-
-#jpgFromCamera {
+	height: 70%;
 	user-drag: none;
 	user-select: none;
 	-moz-user-select: none;

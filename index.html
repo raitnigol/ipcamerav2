@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>172.17.15.57 - Kaamera</title>
     <script src="script.js"></script>
+    <script src="kellaaeg.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body onload="startTimer()">
-    <div id="cameraStream">
-        <img id="jpgFromCamera" src="http://172.17.15.57/jpg/image.jpg"/>
+    <div id="cameraView">
+        <div id="cameraStream">
+            <img id="jpgFromCamera" src="http://172.17.15.57/jpg/image.jpg"/>
+        </div>
     </div>
-	<div id="darkMode">
-		<button id="darkMode_Button" onclick="darkMode()"> Dark Mode</button>
-	</div>
 </body>
 </html>

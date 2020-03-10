@@ -19,10 +19,3 @@ function DownloadImage() {
 
     image.src = "http://172.17.15.57/jpg/image.jpg" + "?_=" + (+new Date());
 }
-
-// dark mode
-
-function darkMode() {
-	document.body.style.backgroundColor = "black";
-	document.getElementById("darkMode_Button").value = "Default Mode";
-}
