@@ -4,4 +4,14 @@
     margin-right: auto;
     width: 70%;
     height: 70%;
+
+}
+
+#jpgFromCamera {
+	user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
