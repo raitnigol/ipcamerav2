@@ -1,3 +1,8 @@
+> html, css, js, execute.sh
+html, css ja javascripti failid on vajalikud, et kaamerapilti kuvada.
+Raspberry Pi bootil käivitatakse index.html fail ning kaamera hakkab tööle.
+execute.sh skript käivitab bootil index.html faili quartz brauseris --kiosk parameetriga (täisekraan)
+
 > quartz browser
 sudo apt install python3 python3-pyqt5 python3-pyqt5.qtwebkit
 git clone https://github.com/ksharindam/quartz-browser-qt5.git
