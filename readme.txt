@@ -15,6 +15,10 @@ cron job pi ja root kasutajatele, 07:00 hommikuti restart masinale
 
 > autostart
 ~/.config/lxsession/LXDE-pi/autostart failis käivitatakse bootil skript, mis asub asukohas /home/pi/ipcamera/execute.sh
+kui asukohas LXDE-pi/ ei asu faili autostart, siis saab selle teisaldada sellest repositooriumist
+1. mv /home/pi/ipcamera/autostart ~/.config/lxsession/LXDE-pi/
+kui asukohas asub juba antud fail, tuleb üks rida failile lõppu kirjutada
+1. @sh /home/pi/ipcamera/execute.sh
 
 
 > unclutter
