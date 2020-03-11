@@ -1,6 +1,6 @@
 // käivita funktsioonid (piltide allalaadimine ja reaalaja näitamine)
 function startFunctions() {
-    setInterval(DownloadImage, 200);
+    setInterval(DownloadImage, 150);
     showTime()
 }
 
