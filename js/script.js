@@ -1,14 +1,13 @@
-// käivita taimer
+// käivita funktsioonid (piltide allalaadimine ja reaalaja näitamine)
 function startFunctions() {
-    // downloadi uus pilt iga 300ms tagant
     setInterval(DownloadImage, 200);
-    // käivita kellaaja skript
     showTime()
 }
 
 // tee uus objekt Headerite jaoks
 var myHeaders = new Headers();
 myHeaders.set('Cache-Control', 'no-cache');
+myHeaders.set('Cache-Control', 'no-store');
 
 // lae pildid alla ja käivita stream
 function DownloadImage() {
