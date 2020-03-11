@@ -1,9 +1,26 @@
 // variabled
 var myHeaders, image, x, h, m, s, today
+
 // käivita funktsioonid (piltide allalaadimine ja reaalaja näitamine)
 function startFunctions() {
     setInterval(DownloadImage, 150);
     showTime();
+
+    // openweathermap api, et saada temperatuur tartus
+    $(document).ready(function getWeather() {
+        $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=tartu&appid=bc8e99bcfa56459251da8618f258d152&units=metric", function(result) {
+            console.log(result);    
+            var celsius, city, feelslike
+            celsius = result.main.temp;
+            city = result.name;
+            feelslike = result.main.feels_like;
+            document.getElementById("city").innerHTML = `${city}`;
+            document.getElementById("celsius").innerHTML = `Temperatuur: ${celsius} C`; 
+            document.getElementById("feelslike").innerHTML = `Tundub nagu: ${feelslike} C`
+            // uuenda andmeid iga 3 min tagant
+            setTimeout(getWeather, 180000);
+        })
+    })
 }
 
 // tee uus objekt Headerite jaoks
