@@ -6,26 +6,13 @@
     <title>172.17.15.57 - Kaamera</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body onload="startFunctions()">
-    <div id="wrapper">
-        <div id="left-sidebar">
-            <p id="clock"></p>
-            <p id="ip">IP: 172.17.15.141</p>
-            <p id="city"></p>
-            <p id="celsius"></p>
-            <p id="feelslike"></p>
-        </div>
-            <div id="content">
-                <div id="inner-content">
-                    <img id="jpgFromCamera" src="http://172.17.15.57/jpg/image.jpg"/>
-                </div>
-            </div>
-        <div id="right-sidebar">
-
-        </div>
-        <div id="footer">
+    <div id="clock"></div>
+    <div id="ipAddress">IP: 172.17.15.141</div>
+    <div class="cameraView">
+        <div class="cameraStream">
+            <img id="jpgFromCamera" src="http://172.17.15.57/jpg/image.jpg"/>
         </div>
     </div>
 </body>
