@@ -24,7 +24,7 @@ function DownloadImage() {
 
 function showTime() {
     var today = new Date();
-    var h = today.getHours();
+    h = pad2(today.getHours());
     m = pad2(today.getMinutes());
     s = pad2(today.getSeconds());
     document.getElementById("clock").innerHTML = `${h}:${m}:${s}`
