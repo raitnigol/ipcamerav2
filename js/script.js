@@ -1,19 +1,21 @@
+// variabled
+var myHeaders, image, x, h, m, s, today
 // käivita funktsioonid (piltide allalaadimine ja reaalaja näitamine)
 function startFunctions() {
     setInterval(DownloadImage, 150);
-    showTime()
+    showTime();
 }
 
 // tee uus objekt Headerite jaoks
-var myHeaders = new Headers();
+myHeaders = new Headers();
 myHeaders.set('Cache-Control', 'no-cache');
 myHeaders.set('Cache-Control', 'no-store');
 
 // lae pildid alla ja käivita stream
 function DownloadImage() {
-    var image = new Image(),
+    image = new Image(),
     x = document.getElementById("jpgFromCamera");
-
+    
     image.onload = function () {
         x.src = image.src;
     };
@@ -22,7 +24,7 @@ function DownloadImage() {
 }
 
 function showTime() {
-    var today = new Date();
+    today = new Date();
     h = pad2(today.getHours());
     m = pad2(today.getMinutes());
     s = pad2(today.getSeconds());
