@@ -8,12 +8,23 @@
     <script src="js/script.js"></script>
 </head>
 <body onload="startFunctions()">
-    <div id="clock"></div>
-    <div id="ipAddress">IP: 172.17.15.141</div>
-    <div class="cameraView">
-        <div class="cameraStream">
-            <img id="jpgFromCamera" src="http://172.17.15.57/jpg/image.jpg"/>
+    <div id="wrapper">
+        <div id="left-sidebar">
+            <p id="clock"></p>
+            <p id="ip">IP: 172.17.15.141</p>
+        </div>
+            <div id="content">
+                <div id="inner-content">
+                    <img id="jpgFromCamera" src="http://172.17.15.57/jpg/image.jpg"/>
+                </div>
+            </div>
+        <div id="right-sidebar">
+
+        </div>
+        <div id="footer">
         </div>
     </div>
+    http://api.openweathermap.org/data/2.5/weather?q=tartu&appid=bc8e99bcfa56459251da8618f258d152
+
 </body>
 </html>
