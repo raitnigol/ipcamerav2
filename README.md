@@ -1,4 +1,6 @@
-# Raspberry Pi 3B+ [Raspbian Buster with Desktop]
+# ipcamerav2
+ipcamerav2 on repositoorium, mis sisaldab lähtekoodi Tartu Ülikooli infotehnoloogia osakonna ip kaamera jälgimiseks.
+OS: Raspberry Pi 3B+ [Raspbian Buster with Desktop]
 
 ## html, css, js, execute.sh
 HTML, CSS ja JS failid on vajalikud, et kaamerapilti kuvada.
