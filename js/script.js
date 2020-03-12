@@ -3,7 +3,7 @@ var myHeaders, image, x, h, m, s, today
 
 // käivita funktsioonid (piltide allalaadimine ja reaalaja näitamine)
 function startFunctions() {
-    setInterval(DownloadImage, 150);
+    setInterval(DownloadImage, 250);
     showTime();
 
     // openweathermap api, et saada temperatuur tartus

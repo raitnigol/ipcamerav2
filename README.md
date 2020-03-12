@@ -7,10 +7,15 @@ html, css ja javascripti failid on vajalikud, et kaamerapilti kuvada.
 
 execute.sh käivitab Raspberry Pi bootimisel quartz brauseri, unclutteri, ja keelab screensaveri.
 
+> ipcamerav2
+ipcamerav2 installeerimine
+cd /home/pi
+git clone https://github.com/raitnigol/ipcamerav2.git
+
 > quartz browser
 Kuna Raspbian Busteriga on kaasas vaid Chromium brauser ja see võtab liialt palju ressurssi, siis kasutame quartz brauserit.
 
-cd /home
+cd /home/pi
 sudo apt install python3 python3-pyqt5 python3-pyqt5.qtwebkit
 git clone https://github.com/ksharindam/quartz-browser-qt5.git
 cd /quartz-browser-qt5
