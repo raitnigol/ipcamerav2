@@ -41,15 +41,16 @@ body {
 }
 
 #city {
-	margin-top: 110px;
+	margin-top: 980px;
 	font-size: 30px;
 }
 
 #celsius {
-	font-size: 20px;
-	margin-top: 150px;
+	font-size: 25px;
+	margin-top: 1005px;
 }
+
 #feelslike {
-	font-size: 20px;
-	margin-top: 175px;
+	font-size: 25px;
+	margin-top: 1035px;
 }
