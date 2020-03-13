@@ -3,7 +3,7 @@ var myHeaders, image, x, h, m, s, today
 
 // käivita funktsioonid (piltide allalaadimine ja reaalaja näitamine)
 function startFunctions() {
-    setInterval(DownloadImage, 250);
+    setInterval(DownloadImage, 500);
     showTime();
     //jquery api-de jaoks
     $(document).ready(function startAPI() {
@@ -49,8 +49,11 @@ function startFunctions() {
                 document.getElementById("covid19-custom-recovered").innerHTML = `Taastunud: ${custom_recovered}`
                 document.getElementById("covid19-custom-dead").innerHTML = `Surnuid: ${custom_dead}`
             })
-
-        setTimeout(startAPI, 180000);        
+        setTimeout(startAPI, 180000);
+        
+        function cum() {
+        }
+        cum();
     });
 }
 
