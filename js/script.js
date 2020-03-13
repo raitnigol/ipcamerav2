@@ -77,7 +77,7 @@ function showTime() {
     s = pad2(today.getSeconds());
     document.getElementById("clock").innerHTML = `${h}:${m}:${s}`
 
-    setTimeout(showTime, 500);
+    setTimeout(showTime, 1000);
 }
 
 function pad2(number) {
