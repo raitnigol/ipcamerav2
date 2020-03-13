@@ -5,22 +5,52 @@ var myHeaders, image, x, h, m, s, today
 function startFunctions() {
     setInterval(DownloadImage, 250);
     showTime();
-
-    // openweathermap api, et saada temperatuur tartus
-    $(document).ready(function getWeather() {
-        $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=tartu&appid=bc8e99bcfa56459251da8618f258d152&units=metric", function(result) {
-            console.log(result);    
-            var celsius, city, feelslike
-            celsius = result.main.temp;
-            city = result.name;
-            feelslike = result.main.feels_like;
-            document.getElementById("city").innerHTML = `${city}`;
-            document.getElementById("celsius").innerHTML = `Temperatuur: ${celsius} C`; 
-            document.getElementById("feelslike").innerHTML = `Tundub nagu: ${feelslike} C`
-            // uuenda andmeid iga 3 min tagant
-            setTimeout(getWeather, 180000);
+    //jquery api-de jaoks
+    $(document).ready(function startAPI() {
+        const openweathermapAPI = "http://api.openweathermap.org/data/2.5/weather?q=tartu&appid=bc8e99bcfa56459251da8618f258d152&units=metric";
+        const covidAPI = "https://covid19.mathdro.id/api";
+        const covidAPI_estonia = "https://covid19.mathdro.id/api/countries/estonia";
+        
+        $.getJSON(openweathermapAPI)
+            .then(function(result) {
+                console.log(result);    
+                var celsius, city, feelslike
+                celsius = result.main.temp;
+                city = result.name;
+                feelslike = result.main.feels_like;
+                document.getElementById("city").innerHTML = `${city}`;
+                document.getElementById("celsius").innerHTML = `Temperatuur: ${celsius} C`; 
+                document.getElementById("feelslike").innerHTML = `Tundub nagu: ${feelslike} C`
         })
-    })
+
+        $.getJSON(covidAPI)
+            .then(function(result) {
+                console.log(result);
+                var confirmed, recovered, dead;
+                confirmed = result.confirmed.value;
+                recovered = result.recovered.value;
+                dead = result.deaths.value;
+
+                document.getElementById("covid19-worldwide-confirmed").innerHTML = `Nakatunuid: ${confirmed}`
+                document.getElementById("covid19-worldwide-recovered").innerHTML = `Taastunud: ${recovered}`
+                document.getElementById("covid19-worldwide-dead").innerHTML = `Surnud: ${dead}`
+                })
+        
+        $.getJSON(covidAPI_estonia)
+            .then(function(result) {
+                console.log(result);
+                var estonia_confirmed, estonia_recovered, estonia_dead;
+                estonia_confirmed = result.confirmed.value;
+                estonia_recovered = result.recovered.value;
+                estonia_dead = result.deaths.value;
+
+                document.getElementById("covid19-estonia-confirmed").innerHTML = `Nakatunuid: ${estonia_confirmed}`
+                document.getElementById("covid19-estonia-recovered").innerHTML = `Taastunud: ${estonia_recovered}`
+                document.getElementById("covid19-estonia-dead").innerHTML = `Surnuid: ${estonia_dead}`
+            })
+
+        setTimeout(startAPI, 180000);        
+    });
 }
 
 // tee uus objekt Headerite jaoks
