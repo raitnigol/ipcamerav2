@@ -9,7 +9,8 @@ function startFunctions() {
     $(document).ready(function startAPI() {
         const openweathermapAPI = "http://api.openweathermap.org/data/2.5/weather?q=tartu&appid=bc8e99bcfa56459251da8618f258d152&units=metric";
         const covidAPI = "https://covid19.mathdro.id/api";
-        const covidAPI_estonia = "https://covid19.mathdro.id/api/countries/estonia";
+        const covidAPI_country = "estonia"; 
+        const covidAPI_custom_country = `https://covid19.mathdro.id/api/countries/${covidAPI_country}`;
         
         $.getJSON(openweathermapAPI)
             .then(function(result) {
@@ -36,17 +37,17 @@ function startFunctions() {
                 document.getElementById("covid19-worldwide-dead").innerHTML = `Surnud: ${dead}`
                 })
         
-        $.getJSON(covidAPI_estonia)
+        $.getJSON(covidAPI_custom_country)
             .then(function(result) {
                 console.log(result);
-                var estonia_confirmed, estonia_recovered, estonia_dead;
-                estonia_confirmed = result.confirmed.value;
-                estonia_recovered = result.recovered.value;
-                estonia_dead = result.deaths.value;
+                var custom_confirmed, custom_recovered, custom_dead;
+                custom_confirmed = result.confirmed.value;
+                custom_recovered = result.recovered.value;
+                custom_dead = result.deaths.value;
 
-                document.getElementById("covid19-estonia-confirmed").innerHTML = `Nakatunuid: ${estonia_confirmed}`
-                document.getElementById("covid19-estonia-recovered").innerHTML = `Taastunud: ${estonia_recovered}`
-                document.getElementById("covid19-estonia-dead").innerHTML = `Surnuid: ${estonia_dead}`
+                document.getElementById("covid19-custom-confirmed").innerHTML = `Nakatunuid: ${custom_confirmed}`
+                document.getElementById("covid19-custom-recovered").innerHTML = `Taastunud: ${custom_recovered}`
+                document.getElementById("covid19-custom-dead").innerHTML = `Surnuid: ${custom_dead}`
             })
 
         setTimeout(startAPI, 180000);        
