@@ -7,6 +7,14 @@ function startFunctions() {
     showTime();
     //jquery api-de jaoks
     $(document).ready(function startAPI() {
+
+        function clockAnimation() {
+            $("#clock").hide();
+            $("#ip").ready(function() {
+                $("#clock").slideDown();
+            })
+        }
+
         const openweathermapAPI = "http://api.openweathermap.org/data/2.5/weather?q=tartu&appid=bc8e99bcfa56459251da8618f258d152&units=metric";
         const covidAPI = "https://covid19.mathdro.id/api";
         const covidAPI_country = "estonia"; 
@@ -35,7 +43,7 @@ function startFunctions() {
                 document.getElementById("covid19-worldwide-confirmed").innerHTML = `Nakatunuid: ${confirmed}`
                 document.getElementById("covid19-worldwide-recovered").innerHTML = `Taastunud: ${recovered}`
                 document.getElementById("covid19-worldwide-dead").innerHTML = `Surnud: ${dead}`
-                })
+            })
         
         $.getJSON(covidAPI_custom_country)
             .then(function(result) {
@@ -49,11 +57,10 @@ function startFunctions() {
                 document.getElementById("covid19-custom-recovered").innerHTML = `Taastunud: ${custom_recovered}`
                 document.getElementById("covid19-custom-dead").innerHTML = `Surnuid: ${custom_dead}`
             })
+
+        // käivita funktsioonid
         setTimeout(startAPI, 180000);
-        
-        function cum() {
-        }
-        cum();
+        clockAnimation();
     });
 }
 
