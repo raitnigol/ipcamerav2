@@ -7,13 +7,11 @@ function startFunctions() {
     showTime();
     //jquery api-de jaoks
     $(document).ready(function startAPI() {
-
-        function clockAnimation() {
+        
             $("#clock").hide();
             $("#ip").ready(function() {
                 $("#clock").slideDown();
             })
-        }
 
         const openweathermapAPI = "http://api.openweathermap.org/data/2.5/weather?q=tartu&appid=bc8e99bcfa56459251da8618f258d152&units=metric";
         const covidAPI = "https://covid19.mathdro.id/api";
@@ -60,7 +58,6 @@ function startFunctions() {
 
         // käivita funktsioonid
         setTimeout(startAPI, 180000);
-        clockAnimation();
     });
 }
 
