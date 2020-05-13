@@ -68,7 +68,7 @@ myHeaders.set('Cache-Control', 'no-store');
 
 // lae pildid alla ja käivita stream
 function DownloadImage() {
-    image = new Image(),
+    const image = new Image(),
     x = document.getElementById("jpgFromCamera");
     
     image.onload = function () {
@@ -76,7 +76,6 @@ function DownloadImage() {
     };
 
     image.src = "http://172.17.15.57/jpg/image.jpg" + "?_=" + (+new Date());
-}
 
 function showTime() {
     today = new Date();
