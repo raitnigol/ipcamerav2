@@ -70,12 +70,18 @@ myHeaders.set('Cache-Control', 'no-store');
 function DownloadImage() {
     const image = new Image(),
     x = document.getElementById("jpgFromCamera");
-    
+    image.onerror = function imgError() {
+        image.onerror = null;
+        image.src = "https://cdn-images-1.medium.com/fit/t/1600/480/1*pUEZd8z__1p-7ICIO1NZFA.png";
+        console.log("Pilti ei leitud");
+    };
+
     image.onload = function () {
         x.src = image.src;
     };
 
     image.src = "http://172.17.15.57/jpg/image.jpg" + "?_=" + (+new Date());
+};
 
 function showTime() {
     today = new Date();
@@ -85,8 +91,8 @@ function showTime() {
     document.getElementById("clock").innerHTML = `${h}:${m}:${s}`
 
     setTimeout(showTime, 1000);
-}
+};
 
 function pad2(number) {
     return (number < 10 ? '0' : '') + number
-}
+};
